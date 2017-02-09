@@ -1,7 +1,21 @@
 import XCTest
-import OctoKit
+@testable import OctoKit
 
 class RepositoryTests: XCTestCase {
+    static var allTests : [(String, (RepositoryTests) -> () throws -> Void)] {
+        return [
+            ("testGetRepositories", testGetRepositories),
+            ("testGetRepositoriesEnterprise", testGetRepositoriesEnterprise),
+            ("testGetAuthenticatedRepositories", testGetAuthenticatedRepositories),
+            ("testGetAuthenticatedRepositoriesEnterprise", testGetAuthenticatedRepositoriesEnterprise),
+            ("testFailToGetRepositories", testFailToGetRepositories),
+            ("testGetRepository", testGetRepository),
+            ("testGetRepositoryEnterprise", testGetRepositoryEnterprise),
+            ("testFailToGetRepository", testFailToGetRepository),
+            ("testUserParsingFullRepository", testUserParsingFullRepository),
+        ]
+    }
+
     // MARK: Actual Request tests
 
     func testGetRepositories() {

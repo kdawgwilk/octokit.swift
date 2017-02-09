@@ -27,3 +27,6 @@ fastlane/report.xml
 Pods/
 Carthage/
 Checkouts/
+
+.build/
+Packages/

@@ -1,7 +1,15 @@
 import XCTest
-import OctoKit
+@testable import OctoKit
 
 class IssueTests: XCTestCase {
+    static var allTests : [(String, (IssueTests) -> () throws -> Void)] {
+        return [
+            ("testGetMyIssues", testGetMyIssues),
+            ("testGetIssue", testGetIssue),
+            ("testParsingIssue", testParsingIssue),
+        ]
+    }
+
     // MARK: Actual Request tests
     
     func testGetMyIssues() {

@@ -1,8 +1,19 @@
 import XCTest
 import Foundation
-import OctoKit
+@testable import OctoKit
 
 class ConfigurationTests: XCTestCase {
+    static var allTests : [(String, (ConfigurationTests) -> () throws -> Void)] {
+        return [
+            ("testTokenConfiguration", testTokenConfiguration),
+            ("testEnterpriseTokenConfiguration", testEnterpriseTokenConfiguration),
+            ("testOAuthConfiguration", testOAuthConfiguration),
+            ("testOAuthTokenConfiguration", testOAuthTokenConfiguration),
+            ("testAccessTokenFromResponse", testAccessTokenFromResponse),
+            ("testHandleOpenURL", testHandleOpenURL),
+        ]
+    }
+
     func testTokenConfiguration() {
         let subject = TokenConfiguration("12345")
         XCTAssertEqual(subject.accessToken, "12345")

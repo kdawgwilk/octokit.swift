@@ -1,7 +1,18 @@
 import XCTest
-import OctoKit
+@testable import OctoKit
 
 class UserTests: XCTestCase {
+    static var allTests : [(String, (UserTests) -> () throws -> Void)] {
+        return [
+            ("testGetUser", testGetUser),
+            ("testFailingToGetUser", testFailingToGetUser),
+            ("testGettingAuthenticatedUser", testGettingAuthenticatedUser),
+            ("testFailToGetAuthenticatedUser", testFailToGetAuthenticatedUser),
+            ("testUserParsingFullUser", testUserParsingFullUser),
+            ("testUserParsingMinimalUser", testUserParsingMinimalUser),
+        ]
+    }
+
     // MARK: Actual Request tests
 
     func testGetUser() {

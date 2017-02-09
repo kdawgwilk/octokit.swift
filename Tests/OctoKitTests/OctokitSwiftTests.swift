@@ -1,9 +1,16 @@
 import XCTest
-import OctoKit
+@testable import OctoKit
 
 let enterpriseURL = "https://enterprise.myserver.com"
 
 class OctokitSwiftTests: XCTestCase {
+    static var allTests : [(String, (OctokitSwiftTests) -> () throws -> Void)] {
+        return [
+            ("testOctokitInitializerWithEmptyConfig", testOctokitInitializerWithEmptyConfig),
+            ("testOctokitInitializerWithConfig", testOctokitInitializerWithConfig),
+        ]
+    }
+
     func testOctokitInitializerWithEmptyConfig() {
         let subject = Octokit()
         XCTAssertEqual(subject.configuration.apiEndpoint, "https://api.github.com")

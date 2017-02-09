@@ -1,7 +1,20 @@
 import XCTest
-import OctoKit
+@testable import OctoKit
 
 class FollowTests: XCTestCase {
+    static var allTests : [(String, (FollowTests) -> () throws -> Void)] {
+        return [
+            ("testGetMyFollowers", testGetMyFollowers),
+            ("testFailToGetMyFollowers", testFailToGetMyFollowers),
+            ("testGetUsersFollowers", testGetUsersFollowers),
+            ("testFailToGetUsersFollowers", testFailToGetUsersFollowers),
+            ("testGetMyFollowing", testGetMyFollowing),
+            ("testFailToGetMyFollowing", testFailToGetMyFollowing),
+            ("testGetUsersFollowing", testGetUsersFollowing),
+            ("testFailToGetUsersFollowing", testFailToGetUsersFollowing),
+        ]
+    }
+
     func testGetMyFollowers() {
         let config = TokenConfiguration("12345")
         let session = OctoKitURLTestSession(expectedURL: "https://api.github.com/user/followers?access_token=12345", expectedHTTPMethod: "GET", jsonFile: "users", statusCode: 200)

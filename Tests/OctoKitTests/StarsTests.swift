@@ -1,7 +1,16 @@
 import XCTest
-import OctoKit
+@testable import OctoKit
 
 class StarsTests: XCTestCase {
+    static var allTests : [(String, (StarsTests) -> () throws -> Void)] {
+        return [
+            ("testGetStarredRepositories", testGetStarredRepositories),
+            ("testFailToGetStarredRepositories", testFailToGetStarredRepositories),
+            ("testGetUsersStarredRepositories", testGetUsersStarredRepositories),
+            ("testFailToGetUsersStarredRepositories", testFailToGetUsersStarredRepositories),
+        ]
+    }
+
     // MARK: Actual Request tests
 
     func testGetStarredRepositories() {

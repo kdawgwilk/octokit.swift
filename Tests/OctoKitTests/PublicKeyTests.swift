@@ -1,8 +1,14 @@
 import XCTest
 import RequestKit
-import OctoKit
+@testable import OctoKit
 
 class PublicKeyTests: XCTestCase {
+    static var allTests : [(String, (PublicKeyTests) -> () throws -> Void)] {
+        return [
+            ("testPostPublicKey", testPostPublicKey),
+        ]
+    }
+
     // MARK: Actual Request tests
 
     func testPostPublicKey() {
